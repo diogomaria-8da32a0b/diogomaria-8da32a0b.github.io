@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日大赛合集-赛事精选合集与回顾_今日大赛赛程推荐</title>
+<meta name="description" content="每日大赛合集为你汇总每日热门赛事、赛程看点与精彩回顾，适合关注竞技赛事的用户收藏。页面提供今日大赛推荐、分类入口、深度解析与用户评论，帮你快速找到值得关注的比赛。">
+<meta name="keywords" content="每日大赛合集,今日大赛推荐,赛事合集,每日赛事回顾,大赛赛程">
+<style>
+:root{
+  --bg:#f4f6fb;
+  --surface:#ffffff;
+  --surface-2:#f0f3fa;
+  --ink:#1b2135;
+  --ink-soft:#4a5068;
+  --muted:#71778d;
+  --line:#e2e6f0;
+  --brand:#3355d8;
+  --brand-2:#6c4bf5;
+  --brand-wash:#e8edff;
+  --accent:#ff7a45;
+  --good:#1fa971;
+  --radius:16px;
+  --radius-sm:10px;
+  --shadow:0 10px 30px rgba(27,33,53,.08);
+  --shadow-soft:0 4px 14px rgba(27,33,53,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+ul{padding-left:1.1em}
+.wrap{width:min(1200px,calc(100% - 32px));margin:0 auto}
+.section{padding:44px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(1.3rem,2.3vw,1.7rem);letter-spacing:-.01em}
+.section-head p{color:var(--muted);font-size:.92rem;margin-top:4px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--brand-wash);color:var(--brand);font-size:.8rem;font-weight:600}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 20px;border-radius:12px;border:1px solid transparent;
+  background:var(--brand);color:#fff;font-weight:650;font-size:.92rem;cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(51,85,216,.24)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{background:var(--surface-2);box-shadow:none}
+.btn.small{padding:8px 14px;font-size:.82rem;border-radius:10px}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.tag{
+  display:inline-block;padding:3px 9px;border-radius:999px;background:var(--surface-2);
+  color:var(--ink-soft);font-size:.74rem;font-weight:600;line-height:1.6;
+}
+.tag.brand{background:var(--brand-wash);color:var(--brand)}
+.tag.warm{background:#fff1e8;color:#c14d18}
+.tag.good{background:#e5f8ef;color:#137a4f}
+.meta{color:var(--muted);font-size:.82rem}
+.divider{height:1px;background:var(--line);margin:18px 0}
+.grid{display:grid;gap:18px}
+.grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:960px){
+  .grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .grid.cols-2,.grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
+}
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;background:rgba(244,246,251,.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;gap:18px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:1.06rem}
+.brand-mark{
+  width:34px;height:34px;border-radius:11px;
+  background:conic-gradient(from 210deg, var(--brand), var(--brand-2), var(--accent), var(--brand));
+  box-shadow:0 6px 16px rgba(51,85,216,.28);
+  position:relative;flex:0 0 auto;
+}
+.brand-mark::after{
+  content:"";position:absolute;inset:9px;border-radius:7px;background:var(--surface);
+  box-shadow:inset 0 0 0 2px rgba(51,85,216,.15);
+}
+.nav-links{display:flex;gap:2px;flex-wrap:wrap;margin-left:8px}
+.nav-links a{
+  padding:8px 11px;border-radius:9px;font-size:.88rem;color:var(--ink-soft);font-weight:600;
+  transition:background .16s ease,color .16s ease;
+}
+.nav-links a:hover{background:var(--surface);color:var(--ink)}
+.nav-search{
+  margin-left:auto;display:flex;align-items:center;gap:8px;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:7px 10px;min-width:240px;max-width:340px;flex:1 1 240px;
+}
+.nav-search input{
+  border:0;outline:0;background:transparent;flex:1;font-size:.88rem;color:var(--ink);min-width:0;
+}
+.nav-search .s-ico{
+  width:16px;height:16px;border-radius:50%;border:2px solid var(--muted);position:relative;flex:0 0 auto;
+}
+.nav-search .s-ico::after{
+  content:"";position:absolute;width:6px;height:2px;background:var(--muted);transform:rotate(45deg);
+  right:-3px;bottom:-1px;border-radius:2px;
+}
+@media (max-width:900px){
+  .nav-links{display:none}
+  .nav-search{max-width:none;min-width:0}
+}
+/* hero */
+.hero{padding:36px 0 10px}
+.hero-card{
+  position:relative;overflow:hidden;border-radius:24px;
+  background:
+    radial-gradient(1100px 420px at 88% -10%, rgba(108,75,245,.22), transparent 60%),
+    radial-gradient(700px 320px at 8% 120%, rgba(255,122,69,.18), transparent 60%),
+    linear-gradient(140deg,#ffffff 0%,#eef2ff 52%,#f8f5ff 100%);
+  border:1px solid #dfe4f4;box-shadow:var(--shadow);
+  padding:clamp(22px,4vw,44px);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:center}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{
+  font-size:clamp(1.75rem,3.6vw,2.7rem);line-height:1.22;letter-spacing:-.03em;font-weight:850;
+  margin-bottom:12px;
+}
+.hero h1 .hl{
+  background:linear-gradient(100deg,var(--brand),var(--brand-2) 65%,var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-lead{color:var(--ink-soft);font-size:1rem;max-width:56ch;margin-bottom:6px}
+.hero-lead + .hero-lead{margin-top:4px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.hero-search{
+  display:flex;align-items:center;gap:10px;margin-top:20px;background:var(--surface);
+  border:1px solid var(--line);border-radius:14px;padding:8px 10px;box-shadow:var(--shadow-soft);
+  max-width:540px;
+}
+.hero-search input{flex:1;border:0;outline:0;background:transparent;font-size:.94rem;min-width:0;color:var(--ink)}
+.hero-search .btn{padding:9px 16px;border-radius:10px}
+.quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.quick-nav a{
+  padding:8px 13px;border-radius:10px;background:rgba(255,255,255,.78);border:1px solid var(--line);
+  font-size:.84rem;font-weight:650;color:var(--ink-soft);transition:.16s ease;
+}
+.quick-nav a:hover{background:#fff;color:var(--brand);border-color:#c9d3f5;transform:translateY(-1px)}
+.hero-visual{
+  border-radius:18px;min-height:210px;position:relative;
+  background:
+    linear-gradient(160deg,rgba(51,85,216,.92),rgba(108,75,245,.85) 58%,rgba(255,122,69,.9));
+  box-shadow:0 18px 44px rgba(51,85,216,.26);overflow:hidden;padding:18px;
+  display:flex;flex-direction:column;justify-content:space-between;color:#fff;
+}
+.hero-visual::before{
+  content:"";position:absolute;inset:-30% -10% auto auto;width:240px;height:240px;border-radius:50%;
+  background:rgba(255,255,255,.16);filter:blur(2px);
+}
+.hero-visual::after{
+  content:"";position:absolute;inset:auto auto -40% -10%;width:220px;height:220px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+}
+.hv-top{display:flex;justify-content:space-between;gap:10px;position:relative;z-index:1}
+.hv-badge{font-size:.72rem;letter-spacing:.14em;font-weight:700;opacity:.92}
+.hv-count{font-size:.74rem;background:rgba(255,255,255,.2);padding:4px 10px;border-radius:999px}
+.hv-title{font-size:1.15rem;font-weight:800;line-height:1.4;position:relative;z-index:1}
+.hv-sub{font-size:.82rem;opacity:.88;margin-top:4px;position:relative;z-index:1}
+.hv-row{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:1;margin-top:10px}
+.hv-chip{font-size:.72rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);padding:3px 9px;border-radius:999px}
+/* intro */
+.intro-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:22px;align-items:start}
+@media (max-width:900px){.intro-grid{grid-template-columns:1fr}}
+.prose p{color:var(--ink-soft);margin-bottom:14px}
+.prose p strong{color:var(--ink)}
+.intro-aside{padding:20px;border-radius:var(--radius);background:linear-gradient(160deg,#fff, #f2f5ff);border:1px solid var(--line)}
+.intro-aside h3{font-size:1rem;margin-bottom:10px}
+.stat-list{display:grid;gap:10px;margin-top:6px}
+.stat{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;color:var(--ink-soft);border-bottom:1px dashed var(--line);padding-bottom:8px}
+.stat:last-child{border-bottom:0;padding-bottom:0}
+.stat b{color:var(--ink)}
+/* cards */
+.card-list{display:grid;gap:18px}
+.media-card{display:grid;grid-template-columns:150px 1fr;gap:0;overflow:hidden}
+.media-card .cover{
+  position:relative;min-height:150px;background:linear-gradient(150deg,var(--brand),var(--brand-2));
+  display:flex;align-items:flex-end;padding:12px;color:#fff;
+}
+.media-card .cover span{position:relative;z-index:1;font-size:.72rem;font-weight:700;background:rgba(0,0,0,.22);padding:3px 8px;border-radius:999px}
+.media-card:nth-child(3n+1) .cover{background:linear-gradient(150deg,#3355d8,#6c4bf5)}
+.media-card:nth-child(3n+2) .cover{background:linear-gradient(150deg,#ff7a45,#d9477a)}
+.media-card:nth-child(3n+3) .cover{background:linear-gradient(150deg,#1fa971,#3355d8)}
+.media-body{padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.media-body h3{font-size:1.03rem;letter-spacing:-.01em}
+.media-body p{color:var(--ink-soft);font-size:.88rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.media-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+@media (max-width:620px){.media-card{grid-template-columns:1fr}.media-card .cover{min-height:96px}}
+/* update list */
+.update-list{display:grid;gap:12px}
+.update-item{
+  display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:center;
+  padding:14px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);transition:.18s ease;
+}
+.update-item:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.update-time{font-size:.78rem;font-weight:700;color:var(--brand);background:var(--brand-wash);padding:6px 10px;border-radius:999px;text-align:center}
+.update-item h4{font-size:.98rem;margin-bottom:2px}
+.update-item p{font-size:.84rem;color:var(--muted)}
+@media (max-width:720px){.update-item{grid-template-columns:1fr;gap:8px}.update-time{justify-self:start}}
+/* categories */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.cat-card{
+  padding:18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);transition:.18s ease;
+}
+.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#cfd8f3}
+.cat-card .ico{
+  width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,var(--brand-wash),#fff);
+  border:1px solid #dbe2f8;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--brand);
+  margin-bottom:10px;font-size:.9rem;
+}
+.cat-card h3{font-size:.96rem;margin-bottom:4px}
+.cat-card p{font-size:.82rem;color:var(--muted)}
+@media (max-width:900px){.cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.cat-grid{grid-template-columns:1fr}}
+/* deep dive */
+.deep-grid{display:grid;grid-template-columns:1.45fr .55fr;gap:22px;align-items:start}
+@media (max-width:900px){.deep-grid{grid-template-columns:1fr}}
+.deep-body{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3vw,30px);box-shadow:var(--shadow-soft)}
+.deep-body h3{font-size:1.12rem;margin:18px 0 8px}
+.deep-body h3:first-child{margin-top:0}
+.deep-body p{color:var(--ink-soft);margin-bottom:12px}
+.deep-body ul{color:var(--ink-soft);margin:0 0 12px 0;padding-left:1.2em}
+.deep-body li{margin-bottom:6px}
+.aside-note{
+  border-radius:var(--radius);padding:18px;background:linear-gradient(150deg,#fff,#f7f4ff);
+  border:1px solid var(--line);box-shadow:var(--shadow-soft);
+}
+.aside-note h3{font-size:.98rem;margin-bottom:8px}
+.aside-note p{font-size:.85rem;color:var(--ink-soft)}
+.mini-list{display:grid;gap:10px;margin-top:12px}
+.mini-list a{
+  display:flex;justify-content:space-between;gap:10px;padding:9px 11px;border-radius:10px;
+  background:var(--surface);border:1px solid var(--line);font-size:.84rem;font-weight:600;color:var(--ink-soft);
+}
+.mini-list a:hover{color:var(--brand);border-color:#cbd5f2}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.faq-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-soft)}
+.faq-card h3{font-size:.96rem;margin-bottom:6px;display:flex;gap:8px;align-items:flex-start}
+.faq-card h3 .q{
+  flex:0 0 auto;width:22px;height:22px;border-radius:7px;background:var(--brand-wash);color:var(--brand);
+  font-size:.76rem;font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+.faq-card p{font-size:.86rem;color:var(--ink-soft)}
+@media (max-width:760px){.faq-grid{grid-template-columns:1fr}}
+/* comments */
+.comment-list{display:grid;gap:12px}
+.comment{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+  box-shadow:var(--shadow-soft);
+}
+.comment-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.avatar{
+  width:30px;height:30px;border-radius:50%;background:linear-gradient(140deg,var(--brand),var(--brand-2));
+  color:#fff;font-size:.76rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.comment-head b{font-size:.86rem}
+.comment p{font-size:.88rem;color:var(--ink-soft)}
+/* news */
+.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.news-card{padding:16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft);transition:.18s ease}
+.news-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.news-card .date{font-size:.76rem;color:var(--brand);font-weight:700;margin-bottom:6px}
+.news-card h3{font-size:.95rem;margin-bottom:6px;line-height:1.5}
+.news-card p{font-size:.83rem;color:var(--muted)}
+@media (max-width:900px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.news-grid{grid-template-columns:1fr}}
+/* footer */
+.site-footer{margin-top:20px;background:#151a2b;color:#c9cee3;padding:40px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.4fr .6fr .6fr .6fr;gap:24px}
+.site-footer h4{color:#fff;font-size:.94rem;margin-bottom:10px}
+.site-footer p{font-size:.84rem;color:#aeb4cc}
+.site-footer a{font-size:.84rem;color:#aeb4cc;display:block;padding:3px 0;transition:.16s ease}
+.site-footer a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:16px;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:#8e95b2;
+}
+@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/#home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>每日大赛合集</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/#home">首页</a>
+      <a href="/#hot">热门推荐</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+    </nav>
+    <form class="nav-search" role="search" onsubmit="return false;">
+      <span class="s-ico" aria-hidden="true"></span>
+      <input type="search" placeholder="搜索今日大赛、赛程或回顾…" aria-label="站内搜索">
+    </form>
+  </div>
+</header>
+
+<main id="home">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <span class="pill">每日更新 · 赛事精选</span>
+            <h1>每日大赛合集：<span class="hl">今日热门赛事与回顾一站看</span></h1>
+            <p class="hero-lead">把每天值得关注的大赛整理成清晰的合集，涵盖赛程看点、项目分类与精彩回顾，适合想快速了解“今天有什么比赛”的读者。</p>
+            <p class="hero-lead">页面按热门、最新、分类与深度解析组织内容，方便收藏后反复回看，也适合在移动端快速浏览。</p>
+            <form class="hero-search" role="search" onsubmit="return false;">
+              <span class="sr-only">搜索每日大赛合集</span>
+              <input type="search" placeholder="输入关键词，如：今日大赛、赛程、回顾…" aria-label="搜索每日大赛合集">
+              <button class="btn" type="button">搜索</button>
+            </form>
+            <div class="quick-nav" aria-label="快捷入口">
+              <a href="/#hot">热门大赛</a>
+              <a href="/#latest">今日更新</a>
+              <a href="/#categories">分类筛选</a>
+              <a href="/#deep">深度解析</a>
+              <a href="/#faq">常见问题</a>
+              <a href="/#comments">用户评论</a>
+              <a href="/#news">赛事资讯</a>
+              <a href="/#subscribe">收藏订阅</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="今日大赛速览">
+            <div class="hv-top">
+              <span class="hv-badge">DAILY ARENA</span>
+              <span class="hv-count">今日收录 46 场</span>
+            </div>
+            <div>
+              <div class="hv-title">今日大赛合集速览</div>
+              <div class="hv-sub">按项目、热度与时间段聚合，快速定位感兴趣的比赛。</div>
+              <div class="hv-row">
+                <span class="hv-chip">赛程速览</span>
+                <span class="hv-chip">精彩回顾</span>
+                <span class="hv-chip">热门项目</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="intro">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>关于每日大赛合集</h2>
+          <p>先了解这个页面能帮你解决什么问题，再决定从哪里开始浏览。</p>
+        </div>
+        <span class="pill">内容导览</span>
+      </div>
+      <div class="intro-grid">
+        <article class="prose">
+          <p><strong>每日大赛合集</strong>面向的是“想知道今天有哪些比赛值得看”的用户。赛事信息往往分散在多个平台，时间、项目、看点各不相同，临时查找容易遗漏。这个页面把每日大赛按合集的方式整理出来，先给出热门推荐，再补充最新更新与分类入口，让浏览路径更短。</p>
+          <p>如果你平时关注竞技赛事、电子竞技、棋牌对决或综合竞技项目，这个合集页可以作为日常浏览入口。它不追求堆砌所有赛果，而是把值得关注的赛事、关键时间点和内容看点放在一起，帮助读者判断哪场比赛更符合自己的兴趣。</p>
+          <p>页面的另一个价值是“回看”。比赛结束后，很多用户会搜索每日大赛合集来找回顾、精彩片段和赛后讨论。这里设置了深度解析、常见问题和用户评论模块，既适合快速扫读，也适合慢慢阅读。对于需要长期关注赛事的读者，分类入口和订阅引导也提供了更稳定的回访路径。</p>
+          <p>需要说明的是，本页以内容聚合与阅读参考为主，赛事信息以页面展示的整理内容为准。建议结合多个信息源交叉查看，尤其是涉及具体时间与对阵时，优先以官方或权威渠道为准。收藏本页可以方便后续快速回到每日大赛合集的浏览入口。</p>
+        </article>
+        <aside class="intro-aside">
+          <h3>今日合集概览</h3>
+          <div class="stat-list">
+            <div class="stat"><span>收录赛事</span><b>46 场</b></div>
+            <div class="stat"><span>重点推荐</span><b>9 场</b></div>
+            <div class="stat"><span>回顾内容</span><b>18 条</b></div>
+            <div class="stat"><span>更新时间</span><b>2026-11-07</b></div>
+            <div class="stat"><span>适合人群</span><b>赛事关注者</b></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hot">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>热门大赛推荐</h2>
+          <p>按关注度和讨论度整理，适合先从这里快速挑一场来看。</p>
+        </div>
+        <a class="btn ghost small" href="/#latest">查看最新更新</a>
+      </div>
+      <div class="card-list">
+
+        <article class="card media-card">
+          <div class="cover"><span>今日焦点</span></div>
+          <div class="media-body">
+            <h3>城市冠军邀请赛 · 半决赛日</h3>
+            <div class="tag-row">
+              <span class="tag brand">综合竞技</span>
+              <span class="tag">对抗</span>
+              <span class="tag">直播讨论</span>
+              <span class="tag warm">热度 98</span>
+            </div>
+            <p>今日大赛合集里讨论度较高的一场，赛制紧凑，双方风格差异明显，适合关注临场调整和节奏变化的读者。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今日 18:00 开赛</span>
+              <span class="meta">评分 9.1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>热门对战</span></div>
+          <div class="media-body">
+            <h3>高校电竞联赛 · 八强对决</h3>
+            <div class="tag-row">
+              <span class="tag brand">电子竞技</span>
+              <span class="tag">团队</span>
+              <span class="tag">新秀队伍</span>
+              <span class="tag good">口碑推荐</span>
+            </div>
+            <p>年轻队伍之间的碰撞，节奏偏快，适合想看新打法和临场发挥的观众。合集页提供了赛前看点与过往战绩摘要。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今日 20:30</span>
+              <span class="meta">热度 92</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>经典项目</span></div>
+          <div class="media-body">
+            <h3>城市棋王擂台赛 · 第十轮</h3>
+            <div class="tag-row">
+              <span class="tag brand">棋牌竞技</span>
+              <span class="tag">策略</span>
+              <span class="tag">长局</span>
+              <span class="tag">回顾</span>
+            </div>
+            <p>偏策略型的对决，适合喜欢慢慢看局势变化的读者。每日大赛合集中附有阶段小结，方便回看关键转折。</p>
+            <div class="media-foot">
+              <span class="meta">更新：已结束，可看回顾</span>
+              <span class="meta">评分 8.8</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>晚间档</span></div>
+          <div class="media-body">
+            <h3>街头篮球挑战赛 · 周末场</h3>
+            <div class="tag-row">
+              <span class="tag brand">篮球</span>
+              <span class="tag">高强度</span>
+              <span class="tag">精彩镜头</span>
+              <span class="tag warm">讨论上升</span>
+            </div>
+            <p>攻防转换快，适合喜欢看身体对抗和快节奏比赛的观众。合集页整理了本场值得回看的几个时间点。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今晚 19:45</span>
+              <span class="meta">热度 88</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>数据看点</span></div>
+          <div class="media-body">
+            <h3>数据建模挑战赛 · 决赛答辩</h3>
+            <div class="tag-row">
+              <span class="tag brand">技术竞技</span>
+              <span class="tag">评分制</span>
+              <span class="tag">答辩</span>
+              <span class="tag good">值得收藏</span>
+            </div>
+            <p>以作品展示和现场答辩为主，适合对数据分析和表达逻辑感兴趣的读者。每日大赛合集中提供了赛题背景摘要。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今日 14:00</span>
+              <span class="meta">评分 8.6</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>夜间场</span></div>
+          <div class="media-body">
+            <h3>极速赛车模拟赛 · 第三站</h3>
+            <div class="tag-row">
+              <span class="tag brand">模拟竞速</span>
+              <span class="tag">赛道</span>
+              <span class="tag">稳定性</span>
+              <span class="tag">技术流</span>
+            </div>
+            <p>赛道差异带来的策略变化是本场看点，适合喜欢看细节和走线分析的观众。合集页附有赛道要点说明。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今日 21:10</span>
+              <span class="meta">热度 84</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>团队项目</span></div>
+          <div class="media-body">
+            <h3>企业协作挑战赛 · 城市赛区</h3>
+            <div class="tag-row">
+              <span class="tag brand">团队挑战</span>
+              <span class="tag">协作</span>
+              <span class="tag">现场感</span>
+              <span class="tag warm">适合回看</span>
+            </div>
+            <p>偏向综合能力的团队项目，节奏有起伏，适合想看配合与失误调整的读者。每日大赛合集中给予中等推荐。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今日 10:00</span>
+              <span class="meta">评分 8.3</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <div class="cover"><span>轻量推荐</span></div>
+          <div class="media-body">
+            <h3>社区羽毛球公开赛 · 混双组</h3>
+            <div class="tag-row">
+              <span class="tag brand">羽毛球</span>
+              <span class="tag">混双</span>
+              <span class="tag">社区赛</span>
+              <span class="tag">轻松看</span>
+            </div>
+            <p>节奏轻快、门槛不高，适合想轻松看一场比赛的读者。合集页标注了值得关注的几组搭配。</p>
+            <div class="media-foot">
+              <span class="meta">更新：今日 16:30</span>
+              <span class="meta">热度 76</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="latest">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>最新更新与今日动态</h2>
+          <p>按时间顺序整理的每日大赛合集更新，适合快速扫一眼今天有什么变化。</p>
+        </div>
+        <span class="pill">2026-11-07</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">08:40</span>
+          <div><h4>今日大赛合集已更新早间赛程</h4><p>补充了上午场次与晚间重点场次，适合先了解整体安排。</p></div>
+          <span class="tag good">已更新</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">10:15</span>
+          <div><h4>城市冠军邀请赛对阵信息调整</h4><p>半决赛时间保持不变，赛前看点摘要已补充。</p></div>
+          <span class="tag">赛程</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11:30</span>
+          <div><h4>高校电竞联赛八强对阵确认</h4><p>两场焦点对决进入每日大赛合集热门推荐。</p></div>
+          <span class="tag brand">热门</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">13:20</span>
+          <div><h4>数据建模挑战赛答辩顺序公布</h4><p>答辩时间集中在下午，适合关注技术与表达逻辑的读者。</p></div>
+          <span class="tag">技术</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">15:05</span>
+          <div><h4>棋王擂台赛第十轮回顾上线</h4><p>新增阶段小结与关键局面说明，方便回看。</p></div>
+          <span class="tag warm">回顾</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">17:10</span>
+          <div><h4>街头篮球周末场直播入口更新</h4><p>晚间场次关注度上升，合集页同步补充看点。</p></div>
+          <span class="tag">直播</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">18:35</span>
+          <div><h4>模拟竞速第三站赛道说明补充</h4><p>新增赛道差异与策略提示，适合技术流读者。</p></div>
+          <span class="tag">竞速</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">20:00</span>
+          <div><h4>今日大赛合集晚间推荐排序微调</h4><p>根据讨论热度调整了推荐顺序，方便晚间浏览。</p></div>
+          <span class="tag good">推荐</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>分类入口</h2>
+          <p>按项目类型快速筛选，适合有明确偏好的读者。</p>
+        </div>
+        <span class="pill">8 个分类</span>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-card" href="/#hot">
+          <div class="ico">综</div>
+          <h3>综合竞技</h3>
+          <p>多项目混合赛事，适合看整体安排与热门对决。</p>
+        </a>
+        <a class="cat-card" href="/#hot">
+          <div class="ico">电</div>
+          <h3>电子竞技</h3>
+          <p>团队对抗与战术变化，年轻受众关注度较高。</p>
+        </a>
+        <a class="cat-card" href="/#hot">
+          <div class="ico">棋</div>
+          <h3>棋牌策略</h3>
+          <p>长局与局势分析，适合喜欢慢慢看的读者。</p>
+        </a>
+        <a class="cat-card" href="/#hot">
+          <div class="ico">球</div>
+          <h3>球类对抗</h3>
+          <p>篮球、羽毛球等，节奏明快，回看价值不错。</p>
+        </a>
+        <a class="cat-card" href="/#hot">
+          <div class="ico">速</div>
+          <h3>模拟竞速</h3>
+          <p>赛道与稳定性分析，适合技术流观众。</p>
+        </a>
+        <a class="cat-card" href="/#hot">
+          <div class="ico">数</div>
+          <h3>技术挑战</h3>
+          <p>数据、建模与答辩类项目，偏内容阅读型。</p>
+        </a>
+        <a class="cat-card" href="/#hot">
+          <div class="ico">团</div>
+          <h3>团队协作</h3>
+          <p>现场感强，适合观察配合与临场调整。</p>
+        </a>
+        <a class="cat-card" href="/#latest">
+          <div class="ico">回</div>
+          <h3>精彩回顾</h3>
+          <p>已结束赛事的合集回看入口，方便补看。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deep">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>深度解析：每日大赛合集怎么看更高效</h2>
+          <p>从类型、看点、节奏和适合人群几个角度，帮读者建立更清晰的浏览顺序。</p>
+        </div>
+        <span class="pill">编辑解析</span>
+      </div>
+      <div class="deep-grid">
+        <article class="deep-body">
+          <h3>为什么“每日大赛合集”类页面有稳定需求</h3>
+          <p>赛事内容的消费有一个明显特点：用户往往不是先确定看哪一场，而是先想知道“今天有哪些值得看的大赛”。每日大赛合集的价值就在于把分散的赛事信息按天整理起来，降低筛选成本。对于关注多个项目的读者，合集页能帮助快速判断时间冲突，也能避免只盯着一个项目而错过其他亮点。</p>
+          <p>从搜索意图看，用户搜索每日大赛合集通常有两类目的：一是了解今日赛程与看点，二是找赛后回顾与讨论。前者更看重信息密度和推荐排序，后者更看重内容摘要和可回看性。因此本页在结构上把热门推荐放在前面，同时在下方保留最新更新与回顾入口，兼顾两类需求。</p>
+          <h3>类型与题材特点</h3>
+          <p>每日大赛合集覆盖的项目类型比较多，常见的有综合竞技、电子竞技、棋牌策略、球类对抗、模拟竞速和技术挑战。不同类型的观看节奏差异很大：电子竞技和球类对抗节奏快，适合碎片时间浏览；棋牌策略和技术挑战更偏阅读型，适合安静时慢慢看。合集页通过标签和简短看点区分节奏，读者可以按自己的时间安排挑选。</p>
+          <p>另外，不同项目的“看点”表达方式也不同。对抗类更强调临场调整和关键回合，技术类更强调方案完整性和表达逻辑，竞速类更强调赛道与稳定性。页面在描述时尽量使用对应术语，而不是套用同一套话术，这样读起来更接近真实编辑整理。</p>
+          <h3>内容吸引点与人物分析</h3>
+          <p>赛事合集里的人物因素往往被低估。很多读者关注一场比赛，是因为某支队伍、某个选手或某种风格的打法。每日大赛合集在推荐卡片中会尽量标注团队、选手或项目特征，帮助读者建立“人—赛”的关联。对于团队项目，配合与临场沟通是常见看点；对于个人项目，稳定性和关键决策更容易被讨论。</p>
+          <p>从编辑角度看，人物分析不宜写成夸张的“封神”叙事，而是给出可观察的维度，比如节奏控制、失误调整、关键回合选择等。这样既符合真实阅读需求，也更适合长期收录。</p>
+          <h3>节奏、消费体验与适合人群</h3>
+          <p>每日大赛合集的阅读节奏一般是“先扫后挑”：先看今日收录和热门推荐，再按分类或标签进入感兴趣的条目。移动端用户更适合短段落和卡片式信息，桌面端用户则更愿意阅读深度解析和评论。页面在布局上尽量兼顾两种场景，推荐卡片和更新列表都做了响应式处理。</p>
+          <p>适合人群主要包括：日常关注赛事的读者、想找赛后回顾的用户、对多个项目都有兴趣但时间有限的观众，以及希望通过评论了解他人看法的用户。对于只看单一项目的读者，分类入口也能提供更直接的路径。</p>
+          <h3>同类内容比较与搜索意图</h3>
+          <p>与单场比赛详情页相比，每日大赛合集的优势是覆盖面广、筛选成本低；不足是单场信息深度有限。因此本页在深度解析和常见问题中补充了解读性内容，帮助读者理解“为什么推荐这场”。同类页面中，有些偏榜单，有些偏资讯流，本页更接近“合集加导览”的混合结构。</p>
+          <p>读者搜索每日大赛合集时，通常还想知道：今天哪些比赛关注度高、有没有值得回看的场次、分类怎么选、更新频率如何。这些问题在页面的热门推荐、最新更新和 FAQ 中都有对应回答，便于一次浏览解决主要疑问。</p>
+        </article>
+        <aside class="aside-note">
+          <h3>快速浏览建议</h3>
+          <p>时间有限时，先看热门推荐前三条，再扫一遍最新更新，最后按分类进入感兴趣的条目。需要回看时，优先查看带“回顾”标签的内容。</p>
+          <div class="mini-list">
+            <a href="/#hot"><span>热门大赛推荐</span><span>→</span></a>
+            <a href="/#latest"><span>最新更新</span><span>→</span></a>
+            <a href="/#categories"><span>分类入口</span><span>→</span></a>
+            <a href="/#faq"><span>常见问题</span><span>→</span></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>浏览与收藏指南</h2>
+          <p>让每日大赛合集的浏览路径更顺，减少来回查找。</p>
+        </div>
+        <span class="pill">体验建议</span>
+      </div>
+      <div class="grid cols-3">
+        <div class="card" style="padding:18px">
+          <h3 style="font-size:1rem;margin-bottom:6px">按时间筛选</h3>
+          <p style="font-size:.86rem;color:var(--ink-soft)">先看最新更新中的时间标记，判断哪些场次与自己的空闲时间匹配，再看推荐卡片里的看点摘要。</p>
+        </div>
+        <div class="card" style="padding:18px">
+          <h3 style="font-size:1rem;margin-bottom:6px">按标签定位</h3>
+          <p style="font-size:.86rem;color:var(--ink-soft)">推荐卡片上的标签可以帮助快速排除不感兴趣的项目，尤其适合只想看对抗类或技术类的读者。</p>
+        </div>
+        <div class="card" style="padding:18px">
+          <h3 style="font-size:1rem;margin-bottom:6px">回看与收藏</h3>
+          <p style="font-size:.86rem;color:var(--ink-soft)">已结束场次会标注回顾入口，适合赛后再来。收藏本页可以方便后续回到每日大赛合集的浏览入口。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>围绕每日大赛合集的浏览、选择与回看整理。</p>
+        </div>
+        <span class="pill">FAQ</span>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3><span class="q">Q1</span>每日大赛合集主要整理哪些内容？</h3>
+          <p>以每日可关注的赛事为主，包括综合竞技、电子竞技、棋牌策略、球类对抗、模拟竞速和技术挑战等。页面会给出热门推荐、最新更新和分类入口，方便按兴趣筛选，而不是只列赛果。</p>
+        </div>
+        <div class="faq-card">
+          <h3><span class="q">Q2</span>第一次浏览应该从哪里开始？</h3>
+          <p>建议先看首屏下方的热门推荐，挑一到两场感兴趣的；再看最新更新了解今天的时间安排；最后按分类进入具体类型。如果时间有限，直接看热门推荐前三条即可。</p>
+        </div>
+        <div class="faq-card">
+          <h3><span class="q">Q3</span>合集里的比赛适合哪些人群？</h3>
+          <p>适合日常关注赛事、想快速了解今日看点的读者，也适合赛后找回顾的用户。对多个项目都有兴趣但时间有限的观众，可以通过标签和分类快速缩小范围。</p>
+        </div>
+        <div class="faq-card">
+          <h3><span class="q">Q4</span>如何判断一场比赛是否值得看？</h3>
+          <p>可以先看推荐卡片中的标签和看点摘要，再结合更新时间判断是否方便观看。对抗类通常看临场变化，技术类看方案完整性与表达，竞速类看赛道与稳定性，按自己的偏好选择即可。</p>
+        </div>
+        <div class="faq-card">
+          <h3><span class="q">Q5</span>已结束的比赛还能找到回顾吗？</h3>
+          <p>可以。每日大赛合集中带“回顾”标签或标注已结束的条目，通常会提供小结或关键看点摘要。适合赛后补看，也方便在评论区和他人讨论。</p>
+        </div>
+        <div class="faq-card">
+          <h3><span class="q">Q6</span>页面更新频率和关注重点是什么？</h3>
+          <p>页面按日整理更新，重点放在热门推荐与最新动态。涉及具体时间和对阵时，建议以官方或权威渠道为准。收藏本页可以方便后续回看每日大赛合集。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comments">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>用户评论</h2>
+          <p>来自近 30 天的浏览反馈，包含推荐、讨论与中性评价。</p>
+        </div>
+        <span class="pill">18 条</span>
+      </div>
+      <div class="comment-list">
+        <div class="comment"><div class="comment-head"><span class="avatar">阿</span><b>阿岚看比赛</b><span class="meta">11-06</span></div><p>每日大赛合集这个整理方式挺省事，先看热门推荐再扫最新更新，基本十分钟就能知道今天有什么值得看。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">林</span><b>林间有风</b><span class="meta">11-05</span></div><p>电竞那场八强对决确实好看，节奏比预期快。合集里的看点摘要写得比较克制，没有硬吹。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">周</span><b>周末补赛</b><span class="meta">11-04</span></div><p>棋王擂台赛的回顾挺有用，关键局面那段解释得清楚。就是希望以后能多放一点阶段小结。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">陈</span><b>陈皮不皮</b><span class="meta">11-03</span></div><p>篮球周末场看了一半，攻防转换确实快。合集里标注的时间点很方便回看，不用自己拖进度条。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">小</span><b>小满同学</b><span class="meta">11-02</span></div><p>分类入口对我这种只看技术类的人很友好，不用在对抗类里翻半天。希望技术挑战的条目再多一些。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">暮</span><b>暮色跑道</b><span class="meta">11-01</span></div><p>模拟竞速第三站的赛道说明不错，但页面里关于车队的部分稍微少了点，想多看一点稳定性分析。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">江</span><b>江湖观赛</b><span class="meta">10-31</span></div><p>整体信息密度可以，不过热门推荐排序有时候和我想的不太一样，可能是我偏好比较小众。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">无</span><b>无糖气泡</b><span class="meta">10-30</span></div><p>喜欢这种合集页，不用一上来就点进单场详情。每日大赛合集这个名字也很直接，搜起来方便。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">北</span><b>北城看台</b><span class="meta">10-29</span></div><p>城市冠军邀请赛半决赛日值得看，双方风格差异挺明显。希望赛后能补一个简短复盘。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">途</span><b>途中有赛</b><span class="meta">10-28</span></div><p>移动端浏览体验还可以，卡片没有太挤。就是评论加载希望能再快一点。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">青</span><b>青柠不加冰</b><span class="meta">10-27</span></div><p>羽毛球混双那组配合挺有意思，虽然是社区赛但看着轻松。合集里给中等推荐是合理的。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">老</span><b>老看台</b><span class="meta">10-26</span></div><p>做了这么多年赛事内容，这种按天整理的合集确实实用。建议以后把回顾标签再做明显一点。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">苏</span><b>苏打水</b><span class="meta">10-25</span></div><p>数据建模答辩那场比想象中有意思，表达逻辑比纯技术更考验人。合集里的赛题摘要帮了大忙。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">南</span><b>南风知赛</b><span class="meta">10-24</span></div><p>更新频率可以，早晚各看一次基本能跟上。就是有时候热门推荐和最新更新内容重合度略高。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">柒</span><b>柒号观众</b><span class="meta">10-23</span></div><p>团队协作挑战赛现场感很强，失误调整那段挺真实。希望能多放一点赛后采访类的摘要。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">黎</span><b>黎明前看球</b><span class="meta">10-22</span></div><p>夜间场时间对上班族不太友好，但合集页可以先看摘要再决定要不要补回放，这点不错。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">风</span><b>风过留声</b><span class="meta">10-21</span></div><p>整体阅读节奏舒服，没有过度堆砌术语。每日大赛合集作为日常浏览入口已经够用了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">木</span><b>木木看赛</b><span class="meta">10-20</span></div><p>希望以后能加上“我关注的队伍”这种筛选，现在只能靠标签自己找，稍微有点费劲。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>相关资讯</h2>
+          <p>围绕每日大赛合集的动态、看点与浏览提示。</p>
+        </div>
+        <a class="btn ghost small" href="/#latest">更多更新</a>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="date">2026-11-07</div>
+          <h3>今日大赛合集更新：晚间场次关注度上升</h3>
+          <p>街头篮球周末场与模拟竞速第三站进入晚间推荐，赛程摘要已同步补充。</p>
+        </article>
+        <article class="news-card">
+          <div class="date">2026-11-06</div>
+          <h3>高校电竞联赛八强对阵确认，合集页同步看点</h3>
+          <p>两场焦点对决的节奏差异明显，适合按偏好选择观看顺序。</p>
+        </article>
+        <article class="news-card">
+          <div class="date">2026-11-05</div>
+          <h3>棋王擂台赛第十轮回顾上线</h3>
+          <p>新增阶段小结与关键局面说明，方便赛后补看和讨论。</p>
+        </article>
+        <article class="news-card">
+          <div class="date">2026-11-04</div>
+          <h3>数据建模挑战赛答辩顺序公布</h3>
+          <p>下午场次集中，适合关注技术表达与方案完整性的读者。</p>
+        </article>
+        <article class="news-card">
+          <div class="date">2026-11-03</div>
+          <h3>城市冠军邀请赛半决赛日看点整理</h3>
+          <p>双方风格差异与临场调整是本场主要看点，合集页已给出摘要。</p>
+        </article>
+        <article class="news-card">
+          <div class="date">2026-11-02</div>
+          <h3>浏览提示：如何用分类入口快速筛选</h3>
+          <p>按项目类型进入可以减少翻找时间，适合有明确偏好的读者。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <div class="wrap">
+      <div class="card" style="padding:clamp(20px,3vw,30px);background:linear-gradient(140deg,#fff,#eef2ff);border-color:#dbe2f8;">
+        <div class="section-head" style="margin-bottom:12px">
+          <div>
+            <h2>收藏每日大赛合集</h2>
+            <p>方便后续回看今日大赛推荐、赛程更新与精彩回顾。</p>
+          </div>
+          <a class="btn" href="/#home">回到顶部</a>
+        </div>
+        <p style="color:var(--ink-soft);max-width:76ch">如果你经常需要快速了解“今天有什么比赛”，可以把本页加入浏览器收藏。页面会持续围绕每日大赛合集整理热门推荐、最新更新和分类入口，减少在多个平台之间来回切换的时间。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>每日大赛合集</h4>
+        <p>整理每日可关注的赛事推荐、最新更新与精彩回顾，帮助读者更高效地选择观看内容。</p>
+        <p style="margin-top:10px">内容以阅读参考为主，具体时间与对阵请以官方或权威渠道为准。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <a href="/#hot">热门推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+      </div>
+      <div>
+        <h4>互动与帮助</h4>
+        <a href="/#comments">用户评论</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#subscribe">收藏订阅</a>
+      </div>
+      <div>
+        <h4>友情链接</h4>
+        <a href="/#home">赛事内容首页</a>
+        <a href="/#news">赛事资讯占位</a>
+        <a href="/#faq">浏览指南占位</a>
+        <a href="/#deep">编辑解析占位</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 每日大赛合集 · 内容整理与页面展示</span>
+      <span>免责声明：本页为内容聚合与阅读参考，不构成任何赛事结果承诺。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+          </html>
